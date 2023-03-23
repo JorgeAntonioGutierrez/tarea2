@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>tarea</title>
+</head>
+
+<body>
+    <script>
+        alert("ESTE ES MI EJERCICIO")
+        var n, a, cedula,numerosocial, diurno, Vespertino, Nocturno, seguroS, ahorro, sueldov, sueldod, sueldoN, total, quincena, Dquincena, mes, sueldo1;
+        Vespertino = 0;
+        Nocturno = 0;
+        diurno = 0;
+
+
+        n = prompt("ingrese aqui su nombre: ");
+        a = prompt("ingrese aqui su apellido: ");
+        cedula = prompt("ingrese aqui su Cedula: ");
+        numerosocial = prompt("ingrese aqui su numero social: ")
+        diurno = parseInt(prompt("Estas son las horas trabajadas diurnas al dia"));
+        Vespertino = parseInt(prompt("Estas son horas trabajadas vespertinas al dia"));
+        Nocturno = parseInt(prompt("Estas son horas trabajadas Nocturnas al dia"));
+
+
+        document.write('<br>', "Nombre:" + n);
+        document.write('<br>', "Apellido:" + a);
+        document.write('<br>', "Cedula:" + cedula);
+        document.write('<br>',"numero de seguro social: "+numerosocial)
+        document.write('<br>', "Horas trabajadas diurnas al dia: " + diurno);
+        document.write('<br>', "Horas trabajadas vespertinas al dia: " + Vespertino);;
+        document.write('<br>', "Horas trabajadas nocturnas al dia: " + Nocturno);
+
+        const horasDiurnas = 675;
+        const horasVespertinas = 700;
+        const horasNocturnas = 956.23;
+
+        sueldod = (diurno * horasDiurnas) * 15; 24
+        console.log("Dinero adquirido por hora Diurna: " + sueldod + " bs");
+
+        sueldov = (Vespertino * horasVespertinas) * 15;
+        console.log("Dinero adquirido por hora vespertina: " + sueldov + " bs");
+
+
+        sueldoN = (Nocturno * horasNocturnas) * 15;
+        console.log("Dinero adiquirido por hora nocturna: " + sueldoN + " bs");
+
+        total = sueldod + sueldov + sueldoN;
+
+        document.write('<br>', "Sueldo Neto Adiquirido: " + total + " bs");
+
+        let porcentajeAhorroHabitacional;
+        let porcentajeSeguroSocial;
+
+        if (total < 85000) {
+            porcentajeAhorroHabitacional = 0.001;
+            porcentajeSeguroSocial = 0.0015;
+        } else if (total >= 85000 && total <= 150000) {
+            porcentajeAhorroHabitacional = 0.0015;
+            porcentajeSeguroSocial = 0.002;
+        } else {
+            porcentajeAhorroHabitacional = 0.003;
+            porcentajeSeguroSocial = 0.0025;
+        }
+
+        
+        const descuentoAhorroHabitacional = total * porcentajeAhorroHabitacional;
+        const descuentoSeguroSocial = total * porcentajeSeguroSocial;
+        const sueldoConDeducciones = total - descuentoAhorroHabitacional - descuentoSeguroSocial;
+        
+        document.write('<br>',"el descuento habitacional fue: "+descuentoAhorroHabitacional+ " bs");
+        document.write('<br>',"el descuento del seguro social fue: "+descuentoSeguroSocial+ " bs");
+        document.write('<br>',"este es el sueldo final: "+sueldoConDeducciones+ " bs");
+
+    </script>
+</body>
+
+</html>
